@@ -8,21 +8,41 @@ namespace FxSaude.Produto.Web
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
-
-            // Use the development version of Modernizr to develop with and learn from. Then, when you're
-            // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
+                "~/Scripts/modernizr-*"));
+
+            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+                "~/Vendors/Limitless/js/core/libraries/jquery.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                "~/Vendors/Limitless/js/core/libraries/bootstrap.min.js",
+                "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/limitless/css").Include(
+                "~/Vendors/Limitless/css/icons/icomoon/styles.css",
+                "~/Vendors/Limitless/css/bootstrap.css",
+                "~/Vendors/Limitless/css/core.css",
+                "~/Vendors/Limitless/css/components.css",
+                "~/Vendors/Limitless/css/colors.css"));
+
+            bundles.Add(new ScriptBundle("~/limitless/js").Include(
+                "~/Vendors/Limitless/js/plugins/loaders/pace.min.js",
+                "~/Vendors/Limitless/js/plugins/loaders/blockui.min.js"));
+
+
+            bundles.Add(new ScriptBundle("~/limitless/theme/js").Include(
+                "~/Vendors/Limitless/js/plugins/visualization/d3/d3.min.js",
+                "~/Vendors/Limitless/js/plugins/visualization/d3/d3_tooltip.js",
+                "~/Vendors/Limitless/js/plugins/forms/styling/switchery.min.js",
+                "~/Vendors/Limitless/js/plugins/forms/styling/uniform.min.js",
+                "~/Vendors/Limitless/js/plugins/forms/selects/bootstrap_multiselect.js",
+                "~/Vendors/Limitless/js/plugins/ui/moment/moment.min.js",
+                "~/Vendors/Limitless/js/plugins/pickers/daterangepicker.js",
+                "~/Vendors/Limitless/js/core/app.js",
+                "~/Vendors/Limitless/js/pages/dashboard.js"
+                ));
+
         }
+
     }
 }
