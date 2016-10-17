@@ -124,7 +124,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -173,6 +172,7 @@
     <Content Include="app\app.module.js" />
     <Content Include="app\main.js" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\img\logo_branco.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -669,6 +669,7 @@
     <Content Include="Vendors\Limitless\js\charts\google\scatter\scatter_diff.js" />
     <Content Include="Vendors\Limitless\js\core\app.js" />
     <Content Include="Vendors\Limitless\js\core\app.min.js" />
+    <Content Include="Vendors\Limitless\js\core\libraries\bootstrap.js" />
     <Content Include="Vendors\Limitless\js\core\libraries\bootstrap.min.js" />
     <Content Include="Vendors\Limitless\js\core\libraries\jasny_bootstrap.min.js" />
     <Content Include="Vendors\Limitless\js\core\libraries\jquery.min.js" />
@@ -2543,7 +2544,11 @@
     <Content Include="Vendors\Limitless\locales\ru.json" />
     <Content Include="Vendors\Limitless\locales\ua.json" />
     <Content Include="Views\Shared\_Layout - Original.cshtml" />
-    <Content Include="Views\Shared\_MainNavbar.cshtml" />
+    <Content Include="Views\Shared\_MainNavBar.cshtml" />
+    <Content Include="Views\Shared\_UserHeaderItem.cshtml" />
+    <Content Include="Views\Shared\_MainSideBar.cshtml" />
+    <Content Include="Vendors\Limitless\css\bootstrap.css.map" />
+    <Content Include="Vendors\Limitless\css\bootstrap.min.css.map" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app\app.component.spec.ts" />

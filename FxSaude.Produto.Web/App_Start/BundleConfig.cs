@@ -15,7 +15,7 @@ namespace FxSaude.Produto.Web
                 "~/Vendors/Limitless/js/core/libraries/jquery.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                "~/Vendors/Limitless/js/core/libraries/bootstrap.min.js",
+                "~/Vendors/Limitless/js/core/libraries/bootstrap.js",
                 "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/limitless/css").Include(
@@ -27,7 +27,10 @@ namespace FxSaude.Produto.Web
 
             bundles.Add(new ScriptBundle("~/limitless/js").Include(
                 "~/Vendors/Limitless/js/plugins/loaders/pace.min.js",
-                "~/Vendors/Limitless/js/plugins/loaders/blockui.min.js"));
+                "~/Vendors/Limitless/js/plugins/loaders/blockui.min.js",
+                
+                
+                "~/Vendors/Limitless/js/core/app.js"));
 
 
             bundles.Add(new ScriptBundle("~/limitless/theme/js").Include(
@@ -38,7 +41,6 @@ namespace FxSaude.Produto.Web
                 "~/Vendors/Limitless/js/plugins/forms/selects/bootstrap_multiselect.js",
                 "~/Vendors/Limitless/js/plugins/ui/moment/moment.min.js",
                 "~/Vendors/Limitless/js/plugins/pickers/daterangepicker.js",
-                "~/Vendors/Limitless/js/core/app.js",
                 "~/Vendors/Limitless/js/pages/dashboard.js"
                 ));
 

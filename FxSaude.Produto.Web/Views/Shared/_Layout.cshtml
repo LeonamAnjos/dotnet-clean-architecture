@@ -8,10 +8,11 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    @Html.Partial("_MainNavbar")
+    @Html.Partial("_MainNavBar")
 
     <div class="page-container">
         <div class="page-content">
+            @Html.Partial("_MainSideBar")
             @RenderBody()
         </div>
     </div>
