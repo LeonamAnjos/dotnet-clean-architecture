@@ -207,6 +207,7 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\main_sidebar.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -671,8 +672,10 @@
     <Content Include="Vendors\Limitless\js\core\app.min.js" />
     <Content Include="Vendors\Limitless\js\core\libraries\bootstrap.js" />
     <Content Include="Vendors\Limitless\js\core\libraries\bootstrap.min.js" />
-    <Content Include="Vendors\Limitless\js\core\libraries\jasny_bootstrap.min.js" />
-    <Content Include="Vendors\Limitless\js\core\libraries\jquery.min.js" />
+    <Content Include="Vendors\Limitless\js\core\libraries\jasny-bootstrap.js" />
+    <Content Include="Vendors\Limitless\js\core\libraries\jasny-bootstrap.min.js" />
+    <Content Include="Vendors\Limitless\js\core\libraries\jquery-2.1.4.js" />
+    <Content Include="Vendors\Limitless\js\core\libraries\jquery-2.1.4.min.js" />
     <Content Include="Vendors\Limitless\js\core\libraries\jquery_ui\core.min.js" />
     <Content Include="Vendors\Limitless\js\core\libraries\jquery_ui\effects.min.js" />
     <Content Include="Vendors\Limitless\js\core\libraries\jquery_ui\full.min.js" />
@@ -2549,6 +2552,9 @@
     <Content Include="Views\Shared\_MainSideBar.cshtml" />
     <Content Include="Vendors\Limitless\css\bootstrap.css.map" />
     <Content Include="Vendors\Limitless\css\bootstrap.min.css.map" />
+    <Content Include="Views\Home\Operadora.cshtml" />
+    <Content Include="Views\Home\Produto.cshtml" />
+    <Content Include="Views\Home\Plano.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app\app.component.spec.ts" />

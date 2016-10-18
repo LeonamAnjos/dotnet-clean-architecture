@@ -14,5 +14,26 @@ namespace FxSaude.Produto.Web.Controllers
 
             return View();
         }
+
+        public ActionResult Operadora()
+        {
+            ViewBag.Title = "Operadoras";
+
+            return View();
+        }
+
+        public ActionResult Produto()
+        {
+            ViewBag.Title = "Produtos";
+
+            return View();
+        }
+
+        public ActionResult Plano()
+        {
+            ViewBag.Title = "Planos";
+
+            return View();
+        }
     }
 }
