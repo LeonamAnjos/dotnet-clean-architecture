@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FxSaude.Produto.Domain
+namespace FxSaude.Core.Domain
 {
-    public class Class1
+    public abstract class Entidade
     {
+        public long Id { get; set; }
     }
 }

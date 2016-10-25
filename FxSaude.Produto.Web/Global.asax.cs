@@ -18,6 +18,8 @@ namespace FxSaude.Produto.Web
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            InversionOfControlConfig.RegisterDependencies();
         }
     }
 }

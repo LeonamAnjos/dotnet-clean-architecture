@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FxSaude.Produto.Web", "FxSa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FxSaude.Produto.Domain", "FxSaude.Produto.Domain\FxSaude.Produto.Domain.csproj", "{9B45D34A-6F00-4B8D-8488-69B7E1C90538}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FxSaude.Core.Domain", "FxSaude.Core.Domain\FxSaude.Core.Domain.csproj", "{CF79FC46-8D22-4D79-80EA-A7ED6DE5C2CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FxSaude.Produto.Domain.EF6", "FxSaude.Produto.Domain.EF6\FxSaude.Produto.Domain.EF6.csproj", "{5A3AA511-6128-423A-8F7F-E5392F28AED5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{9B45D34A-6F00-4B8D-8488-69B7E1C90538}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B45D34A-6F00-4B8D-8488-69B7E1C90538}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B45D34A-6F00-4B8D-8488-69B7E1C90538}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF79FC46-8D22-4D79-80EA-A7ED6DE5C2CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF79FC46-8D22-4D79-80EA-A7ED6DE5C2CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF79FC46-8D22-4D79-80EA-A7ED6DE5C2CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF79FC46-8D22-4D79-80EA-A7ED6DE5C2CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A3AA511-6128-423A-8F7F-E5392F28AED5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A3AA511-6128-423A-8F7F-E5392F28AED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A3AA511-6128-423A-8F7F-E5392F28AED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A3AA511-6128-423A-8F7F-E5392F28AED5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
