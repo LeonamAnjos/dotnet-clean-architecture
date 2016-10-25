@@ -13,7 +13,7 @@ namespace FxSaude.Produto.Domain.EF6
 
         public IDataContext GetDataContext()
         {
-            return _dataContext ?? (_dataContext = new DataContext("FxSaudeDB"));
+            return _dataContext ?? (_dataContext = new DataContext("name=FxSaudeConnection"));
         }
     }
 }

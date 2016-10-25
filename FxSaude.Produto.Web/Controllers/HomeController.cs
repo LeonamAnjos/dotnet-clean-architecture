@@ -23,6 +23,7 @@ namespace FxSaude.Produto.Web.Controllers
             ViewBag.Title = "Home Page";
 
             var repository = _unitOfWork.GetRepository<Empresa>();
+            var empresas = repository.Queryable().ToList();
 
             return View();
         }
