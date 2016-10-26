@@ -4,10 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Limitless/css")
-    @Scripts.Render("~/bundles/modernizr")
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+
+    @Styles.Render("~/limitless/css")
+    @Scripts.Render("~/scripts/modernizr")
 </head>
-<body>
+<body class="pace-done">
     @Html.Partial("_NavBar")
 
     <div class="page-container">
@@ -17,9 +20,10 @@
         </div>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/Limitless/js")
+    @Scripts.Render("~/scripts/libraries")
+    @Scripts.Render("~/limitless/js/libraries")
+    @Scripts.Render("~/limitless/js/core")
+    @Scripts.Render("~/scripts/custom")
 
     @RenderSection("scripts", required: false)
 </body>

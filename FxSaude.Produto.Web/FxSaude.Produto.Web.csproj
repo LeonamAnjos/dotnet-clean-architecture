@@ -203,7 +203,7 @@
     <Content Include="Content\img\logo_branco.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="index.html" />
+    <Content Include="angular.html" />
     <Content Include="limitless.html" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
     <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
@@ -229,16 +229,17 @@
     <Content Include="app\app.module.js.map" />
     <Content Include="app\main.js.map" />
     <Content Include="package.json" />
-    <None Include="Scripts\jquery-2.1.1.intellisense.js" />
-    <Content Include="Scripts\jquery-2.1.1.js" />
-    <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <Content Include="bower.json" />
+    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.4.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\main_sidebar.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="styles.css" />
+    <Content Include="Scripts\systemjs.config.js" />
     <Content Include="Vendors\Limitless\css\bootstrap.css" />
     <Content Include="Vendors\Limitless\css\bootstrap.min.css" />
     <Content Include="Vendors\Limitless\css\colors.css" />
@@ -2333,8 +2334,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="tsconfig.json" />
-    <Content Include="typings.json" />
+    <Content Include="tsScripts\tsconfig.json" />
+    <Content Include="tsScripts\typings.json" />
     <Content Include="Vendors\Limitless\js\plugins\editors\codemirror\mode\livescript\livescript.ls" />
     <Content Include="Vendors\Limitless\js\plugins\pickers\pickadate\translations\FORMATTING.md" />
     <Content Include="Vendors\Limitless\js\plugins\pickers\pickadate\translations\NAMING.md" />
@@ -2594,7 +2595,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-    <Content Include="Scripts\jquery-2.1.1.min.map" />
+    <Content Include="Scripts\jquery-2.1.4.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
