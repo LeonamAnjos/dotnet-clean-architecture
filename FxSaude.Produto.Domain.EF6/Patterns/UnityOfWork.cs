@@ -5,13 +5,12 @@ using System.Data.Common;
 using System.Data.Entity;
 using System.Data.Entity.Core.Objects;
 using System.Data.Entity.Infrastructure;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using FxSaude.Core.Domain;
+using FxSaude.Core.Domain.Data;
+using FxSaude.Core.Domain.Patterns;
 using Microsoft.Practices.ServiceLocation;
 
-namespace FxSaude.Produto.Domain.EF6
+namespace FxSaude.Produto.Domain.EF6.Patterns
 {
     public class UnityOfWork : IUnitOfWork
     {

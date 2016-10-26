@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
 using FxSaude.Core.Domain;
+using FxSaude.Core.Domain.Data;
 using FxSaude.Produto.Domain.Entidades;
 
-namespace FxSaude.Produto.Domain.EF6
+namespace FxSaude.Produto.Domain.EF6.Data
 {
     public class DataContext : DbContext, IDataContext 
     {

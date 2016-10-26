@@ -53,11 +53,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataConfiguration.cs" />
-    <Compile Include="DataContext.cs" />
-    <Compile Include="DataContextProvider.cs" />
-    <Compile Include="Repository.cs" />
-    <Compile Include="UnityOfWork.cs" />
+    <Compile Include="Data\DataConfiguration.cs" />
+    <Compile Include="Data\DataContext.cs" />
+    <Compile Include="Data\DataContextProvider.cs" />
+    <Compile Include="Patterns\Repository.cs" />
+    <Compile Include="Patterns\UnityOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

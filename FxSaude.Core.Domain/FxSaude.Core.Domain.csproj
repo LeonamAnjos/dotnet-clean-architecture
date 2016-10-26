@@ -40,11 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IDataContextProvider.cs" />
+    <Compile Include="Data\IDataContext.cs" />
+    <Compile Include="Data\IDataContextProvider.cs" />
     <Compile Include="Entidade.cs" />
-    <Compile Include="IDataContext.cs" />
-    <Compile Include="IRepository.cs" />
-    <Compile Include="IUnitOfWork.cs" />
+    <Compile Include="Patterns\IRepository.cs" />
+    <Compile Include="Patterns\IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

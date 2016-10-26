@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace FxSaude.Core.Domain
+namespace FxSaude.Core.Domain.Patterns
 {
     public interface IUnitOfWork : IDisposable
     {

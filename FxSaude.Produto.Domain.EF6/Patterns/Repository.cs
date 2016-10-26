@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using FxSaude.Core.Domain;
+using FxSaude.Core.Domain.Data;
+using FxSaude.Core.Domain.Patterns;
 
-namespace FxSaude.Produto.Domain.EF6
+namespace FxSaude.Produto.Domain.EF6.Patterns
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : Entidade
     {

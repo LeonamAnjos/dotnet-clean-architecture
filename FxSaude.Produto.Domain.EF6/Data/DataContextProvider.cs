@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FxSaude.Core.Domain;
+﻿using FxSaude.Core.Domain;
+using FxSaude.Core.Domain.Data;
 
-namespace FxSaude.Produto.Domain.EF6
+namespace FxSaude.Produto.Domain.EF6.Data
 {
     public class DataContextProvider : IDataContextProvider
     {
