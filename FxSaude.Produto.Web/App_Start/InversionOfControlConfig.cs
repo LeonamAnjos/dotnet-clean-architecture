@@ -15,8 +15,8 @@ namespace FxSaude.Produto.Web
         public static void RegisterDependencies()
         {
             var container = new UnityContainer();
-            container.RegisterType<IDataContextProvider, DataContextProvider>();
-            container.RegisterType<IUnitOfWork, UnityOfWork>();
+            container.RegisterType<IDataContextProvider, ProductDataContextProvider>();
+            container.RegisterType<IUnitOfWork, ProductUnityOfWork>();
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }

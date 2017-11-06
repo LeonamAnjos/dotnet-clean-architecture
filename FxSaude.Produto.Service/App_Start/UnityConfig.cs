@@ -1,5 +1,5 @@
 using System;
-using Microsoft.Practices.Unity.Configuration;
+using FxSaude.Produto.Domain.EF6.Start;
 using Unity;
 
 namespace FxSaude.Produto.Service
@@ -36,12 +36,7 @@ namespace FxSaude.Produto.Service
         /// </remarks>
         public static void RegisterTypes(IUnityContainer container)
         {
-            // NOTE: To load from web.config uncomment the line below.
-            // Make sure to add a Unity.Configuration to the using statements.
-            // container.LoadConfiguration();
-
-            // TODO: Register your type's mappings here.
-            // container.RegisterType<IProductRepository, ProductRepository>();
+            ProductDomainConfig.RegisterTypes(container);
         }
     }
 }

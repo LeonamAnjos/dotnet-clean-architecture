@@ -294,6 +294,20 @@
     <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.2.1.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FxSaude.Core.Domain\FxSaude.Core.Domain.csproj">
+      <Project>{CF79FC46-8D22-4D79-80EA-A7ED6DE5C2CC}</Project>
+      <Name>FxSaude.Core.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FxSaude.Produto.Domain.EF6\FxSaude.Produto.Domain.EF6.csproj">
+      <Project>{5A3AA511-6128-423A-8F7F-E5392F28AED5}</Project>
+      <Name>FxSaude.Produto.Domain.EF6</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FxSaude.Produto.Domain\FxSaude.Produto.Domain.csproj">
+      <Project>{9B45D34A-6F00-4B8D-8488-69B7E1C90538}</Project>
+      <Name>FxSaude.Produto.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

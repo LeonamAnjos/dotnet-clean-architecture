@@ -8,11 +8,13 @@ using System.Data.Entity.Infrastructure;
 using FxSaude.Core.Domain;
 using FxSaude.Core.Domain.Data;
 using FxSaude.Core.Domain.Patterns;
+using FxSaude.Produto.Domain.EF6.Data;
+using FxSaude.Produto.Domain.Patterns;
 using Microsoft.Practices.ServiceLocation;
 
 namespace FxSaude.Produto.Domain.EF6.Patterns
 {
-    public class UnityOfWork : IUnitOfWork
+    public class ProductUnityOfWork : IProductUnitOfWork
     {
         private readonly IDataContextProvider _dataContextProvider;
         private DbContext _dbContext;
@@ -21,7 +23,7 @@ namespace FxSaude.Produto.Domain.EF6.Patterns
         private DbTransaction _transaction;
         private readonly Dictionary<string, dynamic> _repositories;
 
-        public UnityOfWork(IDataContextProvider dataContextProvider)
+        public ProductUnityOfWork(ProductDataContextProvider dataContextProvider)
         {
             _dataContextProvider = dataContextProvider;
             _dbContext = dataContextProvider.GetDataContext() as DbContext;
