@@ -1,8 +1,6 @@
-﻿using System.Web.Mvc;
-using FxSaude.Core.Domain;
+using System.Web.Mvc;
 using FxSaude.Core.Domain.Data;
 using FxSaude.Core.Domain.Patterns;
-using FxSaude.Produto.Domain.EF6;
 using FxSaude.Produto.Domain.EF6.Data;
 using FxSaude.Produto.Domain.EF6.Patterns;
 using Microsoft.Practices.Unity;
