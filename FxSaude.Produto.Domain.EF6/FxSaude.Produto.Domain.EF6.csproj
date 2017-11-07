@@ -59,6 +59,16 @@
     <Compile Include="Data\DataConfiguration.cs" />
     <Compile Include="Data\ProductDataContext.cs" />
     <Compile Include="Data\ProductDataContextProvider.cs" />
+    <Compile Include="Migrations\201711070841466_CreateUsers.cs" />
+    <Compile Include="Migrations\201711070841466_CreateUsers.Designer.cs">
+      <DependentUpon>201711070841466_CreateUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711070847209_CreateMicroposts.cs" />
+    <Compile Include="Migrations\201711070847209_CreateMicroposts.Designer.cs">
+      <DependentUpon>201711070847209_CreateMicroposts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\Seeds\UserSeed.cs" />
     <Compile Include="Patterns\Repository.cs" />
     <Compile Include="Patterns\ProductUnityOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,6 +90,15 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201711070841466_CreateUsers.resx">
+      <DependentUpon>201711070841466_CreateUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711070847209_CreateMicroposts.resx">
+      <DependentUpon>201711070847209_CreateMicroposts.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

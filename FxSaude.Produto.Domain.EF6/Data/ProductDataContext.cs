@@ -6,6 +6,7 @@ namespace FxSaude.Produto.Domain.EF6.Data
 {
     public class ProductDataContext : DbContext, IDataContext 
     {
+        public ProductDataContext() {}
         public ProductDataContext(string nameOrConnectionString) : base(nameOrConnectionString) {}
 
         public DbSet<Micropost> Microposts { get; set; }
