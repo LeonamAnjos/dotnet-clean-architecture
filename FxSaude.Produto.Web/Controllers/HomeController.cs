@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Principal;
-using System.Web;
 using System.Web.Mvc;
-using FxSaude.Core.Domain;
 using FxSaude.Core.Domain.Patterns;
-using FxSaude.Produto.Domain.Entidades;
 
 namespace FxSaude.Produto.Web.Controllers
 {

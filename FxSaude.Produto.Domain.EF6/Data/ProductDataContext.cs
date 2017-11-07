@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity;
 using FxSaude.Core.Domain.Data;
-using FxSaude.Produto.Domain.Entidades;
+using FxSaude.Produto.Domain.Entities;
 
 namespace FxSaude.Produto.Domain.EF6.Data
 {
@@ -8,8 +8,8 @@ namespace FxSaude.Produto.Domain.EF6.Data
     {
         public ProductDataContext(string nameOrConnectionString) : base(nameOrConnectionString) {}
 
-        public DbSet<Empresa> Empresas { get; set; }
-        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Micropost> Microposts { get; set; }
+        public DbSet<User> Users { get; set; }
 
     }
 }

@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace FxSaude.Core.Domain.Patterns
 {
-    public interface IRepository<TEntity> where TEntity : Entidade
+    public interface IRepository<TEntity> where TEntity : Entity
     {
         TEntity Find(params object[] keyValues);
         IQueryable<TEntity> SelectQuery(string query, params object[] parameters);

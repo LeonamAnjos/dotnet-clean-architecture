@@ -42,7 +42,7 @@
   <ItemGroup>
     <Compile Include="Data\IDataContext.cs" />
     <Compile Include="Data\IDataContextProvider.cs" />
-    <Compile Include="Entidade.cs" />
+    <Compile Include="Entity.cs" />
     <Compile Include="Patterns\IRepository.cs" />
     <Compile Include="Patterns\IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -7,7 +7,7 @@ using FxSaude.Core.Domain.Patterns;
 
 namespace FxSaude.Produto.Domain.EF6.Patterns
 {
-    public class Repository<TEntity> : IRepository<TEntity> where TEntity : Entidade
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity
     {
         private readonly DbSet<TEntity> _dbSet;
 

@@ -40,8 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entidades\Empresa.cs" />
-    <Compile Include="Entidades\Usuario.cs" />
+    <Compile Include="Entities\Micropost.cs" />
+    <Compile Include="Entities\User.cs" />
     <Compile Include="Patterns\IProductUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

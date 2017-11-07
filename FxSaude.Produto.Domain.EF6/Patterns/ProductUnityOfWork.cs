@@ -30,7 +30,7 @@ namespace FxSaude.Produto.Domain.EF6.Patterns
             _repositories = new Dictionary<string, dynamic>();
         }
 
-        public IRepository<TEntity> GetRepository<TEntity>() where TEntity : Entidade
+        public IRepository<TEntity> GetRepository<TEntity>() where TEntity : Entity
         {
             if (ServiceLocator.IsLocationProviderSet)
             {
@@ -49,7 +49,7 @@ namespace FxSaude.Produto.Domain.EF6.Patterns
             return _repositories[key];
         }
 
-        private static string GetRepositoryKey<TEntity>() where TEntity : Entidade
+        private static string GetRepositoryKey<TEntity>() where TEntity : Entity
         {
             return typeof(TEntity).Name;
         }

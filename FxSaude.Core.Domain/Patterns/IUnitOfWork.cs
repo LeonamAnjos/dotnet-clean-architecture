@@ -7,7 +7,7 @@ namespace FxSaude.Core.Domain.Patterns
     {
         int SaveChanges();
         void Dispose(bool disposing);
-        IRepository<TEntity> GetRepository<TEntity>() where TEntity : Entidade;
+        IRepository<TEntity> GetRepository<TEntity>() where TEntity : Entity;
         void BeginTransaction(IsolationLevel isolationLevel = IsolationLevel.Unspecified);
         bool Commit();
         void Rollback();
