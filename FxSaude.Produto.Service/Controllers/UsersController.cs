@@ -7,14 +7,30 @@ using FxSaude.Produto.Service.Models.Users;
 
 namespace FxSaude.Produto.Service.Controllers
 {
-    public class UserController : ApiController
+    public class UsersController : ApiController
     {
         private readonly IProductUnitOfWork _productUnitOfWork;
 
-        public UserController(IProductUnitOfWork productProductUnitOfWork)
+        public UsersController(IProductUnitOfWork productProductUnitOfWork)
         {
             _productUnitOfWork = productProductUnitOfWork;
         }
+
+        // UsersController
+        // TODO: Index   (GET)    /api/users
+        // TODO: Show    (GET)    /api/users/:id
+        // TODO: Create  (POST)   /api/users/create
+        // TODO: Update  (PUT)    /api/users/:id
+        // TODO: Destroy (DELETE) /api/users/:id
+
+        // SessionsController
+        // TODO: Login   (POST)   /api/session/new
+        // TODO: Logout  (DELETE) /api/session/:id
+
+        // PasswordResetsController
+        // TODO: Create  (POST)  /api/passwordResets/create
+        // TODO: Update  (PUT)   /api/passwordResets/:token
+
 
         // GET: api/User
         public IEnumerable<UserViewModel> Get()
@@ -34,8 +50,12 @@ namespace FxSaude.Produto.Service.Controllers
         }
 
         // POST: api/User
-        public void Post([FromBody]string value)
+        public void Post([FromBody]UserCreateViewModel value)
         {
+            var user = new User {Name = value.Name, Email = value.Email};
+            var repository = _productUnitOfWork.GetRepository<User>();
+            repository.Insert(user);
+            _productUnitOfWork.SaveChanges();
         }
 
         // PUT: api/User/5

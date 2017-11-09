@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.15
+VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FxSaude.Produto.Web", "FxSaude.Produto.Web\FxSaude.Produto.Web.csproj", "{435AA887-2451-48EF-B707-125B93B3BDA3}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FxSaude.Produto.Domain.EF6", "FxSaude.Produto.Domain.EF6\FxSaude.Produto.Domain.EF6.csproj", "{5A3AA511-6128-423A-8F7F-E5392F28AED5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FxSaude.Produto.Service", "FxSaude.Produto.Service\FxSaude.Produto.Service.csproj", "{D6638633-E914-4E08-B164-3D9C0DDF00CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FxSaude.Produto.Service.Test", "FxSaude.Produto.Service.Test\FxSaude.Produto.Service.Test.csproj", "{329C2025-CA07-4F92-8D87-2C540615025A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{D6638633-E914-4E08-B164-3D9C0DDF00CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6638633-E914-4E08-B164-3D9C0DDF00CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6638633-E914-4E08-B164-3D9C0DDF00CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{329C2025-CA07-4F92-8D87-2C540615025A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{329C2025-CA07-4F92-8D87-2C540615025A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{329C2025-CA07-4F92-8D87-2C540615025A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{329C2025-CA07-4F92-8D87-2C540615025A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
