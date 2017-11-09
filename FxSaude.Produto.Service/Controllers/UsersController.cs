@@ -16,22 +16,6 @@ namespace FxSaude.Produto.Service.Controllers
             _productUnitOfWork = productProductUnitOfWork;
         }
 
-        // UsersController
-        // TODO: Index   (GET)    /api/users
-        // TODO: Show    (GET)    /api/users/:id
-        // TODO: Create  (POST)   /api/users/create
-        // TODO: Update  (PUT)    /api/users/:id
-        // TODO: Destroy (DELETE) /api/users/:id
-
-        // SessionsController
-        // TODO: Login   (POST)   /api/session/new
-        // TODO: Logout  (DELETE) /api/session/:id
-
-        // PasswordResetsController
-        // TODO: Create  (POST)  /api/passwordResets/create
-        // TODO: Update  (PUT)   /api/passwordResets/:token
-
-
         // GET: api/User
         public IEnumerable<UserViewModel> Get()
         {

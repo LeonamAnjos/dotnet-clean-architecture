@@ -7,7 +7,7 @@ using FxSaude.Produto.Service.Models.Users;
 using Moq;
 using NUnit.Framework;
 
-namespace FxSaude.Produto.Service.Test.Controllers
+namespace FxSaude.Produto.Service.Test.UnitTests.Controllers
 {
     [TestFixture]
     public class UsersControllerTest
@@ -52,5 +52,29 @@ namespace FxSaude.Produto.Service.Test.Controllers
             Assert.That(_users[1].Email, Is.EqualTo("hclinton@senate.gov"));
         }
 
+        [Test]
+        [Ignore("Index   (GET)    /api/users")]
+        public void ShouldReturnAllUsers()
+        {
+        }
+
+        [Test]
+        [Ignore("Show    (GET)    /api/users/:id")]
+        public void ShouldReturnUserWithSameId()
+        {
+        }
+
+        [Test]
+        [Ignore("Update  (PUT)    /api/users/:id")]
+        public void ShouldUpdateUser()
+        {
+        }
+
+        [Test]
+        [Ignore("Destroy (DELETE) /api/users/:id")]
+        public void ShouldDeleteUserWithSameId()
+        {
+        }
+        
     }
 }

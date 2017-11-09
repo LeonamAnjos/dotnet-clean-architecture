@@ -68,9 +68,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\UsersControllerTest.cs" />
-    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitTests\Controllers\SessionsControllerTest.cs" />
+    <Compile Include="UnitTests\Controllers\PasswordResetsControllerTest.cs" />
+    <Compile Include="UnitTests\Controllers\UsersControllerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -89,6 +90,9 @@
       <Project>{D6638633-E914-4E08-B164-3D9C0DDF00CD}</Project>
       <Name>FxSaude.Produto.Service</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="IntegrationTests\Controllers\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
