@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using FxSaude.Core.Domain.Patterns;
 using FxSaude.Produto.Domain.Entities;
 using FxSaude.Produto.Domain.Patterns;
@@ -22,6 +23,7 @@ namespace FxSaude.Produto.Service.Test.UnitTests.Controllers
 
             var repository = new Mock<IRepository<User>>();
             repository.Setup(r => r.Insert(It.IsAny<User>())).Callback((User u) => _users.Add(u));
+            repository.Setup(r => r.Queryable()).Returns(_users.AsQueryable);
 
             var unitOfWork = new Mock<IProductUnitOfWork>();
             unitOfWork.Setup(u => u.GetRepository<User>()).Returns(repository.Object);
@@ -53,9 +55,25 @@ namespace FxSaude.Produto.Service.Test.UnitTests.Controllers
         }
 
         [Test]
-        [Ignore("Index   (GET)    /api/users")]
         public void ShouldReturnAllUsers()
         {
+            _users.Add(new User { Id = 1, Nickname = "DI", Name = "Didi", Email = "didi@trapalhoes.com.br"});
+            _users.Add(new User { Id = 2, Nickname = "DE", Name = "Dede", Email = "dede@trapalhoes.com.br"});
+            _users.Add(new User { Id = 3, Nickname = "MU", Name = "Mussum", Email = "mussum@trapalhoes.com.br"});
+
+            var expected = _users.Select(u => new UserViewModel { Name = u.Name, Nickname = u.Nickname, Email = u.Email }).ToList();
+            var actual = _usersController.Get().ToList();
+            
+            Assert.That(actual.Count, Is.EqualTo(expected.Count));
+            Assert.That(actual[0].Name, Is.EqualTo(expected[0].Name));
+            Assert.That(actual[1].Name, Is.EqualTo(expected[1].Name));
+            Assert.That(actual[2].Name, Is.EqualTo(expected[2].Name));
+            Assert.That(actual[0].Nickname, Is.EqualTo(expected[0].Nickname));
+            Assert.That(actual[1].Nickname, Is.EqualTo(expected[1].Nickname));
+            Assert.That(actual[2].Nickname, Is.EqualTo(expected[2].Nickname));
+            Assert.That(actual[0].Email, Is.EqualTo(expected[0].Email));
+            Assert.That(actual[1].Email, Is.EqualTo(expected[1].Email));
+            Assert.That(actual[2].Email, Is.EqualTo(expected[2].Email));
         }
 
         [Test]

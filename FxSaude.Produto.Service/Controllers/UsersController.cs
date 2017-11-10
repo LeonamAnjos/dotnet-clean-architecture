@@ -22,8 +22,9 @@ namespace FxSaude.Produto.Service.Controllers
             var repository = _productUnitOfWork.GetRepository<User>();
             return repository.Queryable().Select(u => new UserViewModel
             {
-                Nickname = u.Name,
-                Name = u.Email
+                Nickname = u.Nickname,
+                Name = u.Name,
+                Email = u.Email
             });
         }
 
