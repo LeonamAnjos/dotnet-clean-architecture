@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using FxSaude.Core.Domain.Patterns;
 using FxSaude.Produto.Domain.Entities;
@@ -77,9 +78,26 @@ namespace FxSaude.Produto.Service.Test.UnitTests.Controllers
         }
 
         [Test]
-        [Ignore("Show    (GET)    /api/users/:id")]
         public void ShouldReturnUserWithSameId()
         {
+            _users.Add(new User { Id = 1, Nickname = "Mili", Name = "Milena", Email = "milena@chiquititas.com.br" });
+            _users.Add(new User { Id = 2, Nickname = "Pata", Name = "Patrícia", Email = "patricia@chiquititas.com.br" });
+            _users.Add(new User { Id = 3, Nickname = "Bia", Name = "Beatriz", Email = "beatriz@chiquititas.com.br" });
+
+            var actual = _usersController.Get(2);
+            Assert.That(actual, Is.Not.Null);
+            Assert.That(actual.Nickname, Is.EqualTo("Pata"));
+            Assert.That(actual.Name, Is.EqualTo("Patrícia"));
+            Assert.That(actual.Email, Is.EqualTo("patricia@chiquititas.com.br"));
+        }
+
+        [Test]
+        public void ShouldReturnEmptyUser()
+        {
+            _users.Add(new User { Id = 1, Nickname = "Mili", Name = "Milena", Email = "milena@chiquititas.com.br" });
+
+            var actual = _usersController.Get(2);
+            Assert.That(actual, Is.Null);
         }
 
         [Test]

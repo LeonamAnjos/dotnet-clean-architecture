@@ -29,9 +29,19 @@ namespace FxSaude.Produto.Service.Controllers
         }
 
         // GET: api/User/5
-        public string Get(int id)
+        public UserViewModel Get(long id)
         {
-            return "value";
+            var repository = _productUnitOfWork.GetRepository<User>();
+            var user = repository.Queryable().FirstOrDefault(u => u.Id == id);
+            if (user == null)
+                return null;
+        
+            return new UserViewModel
+            {
+                Nickname = user.Nickname,
+                Name = user.Name,
+                Email = user.Email,
+            };
         }
 
         // POST: api/User
