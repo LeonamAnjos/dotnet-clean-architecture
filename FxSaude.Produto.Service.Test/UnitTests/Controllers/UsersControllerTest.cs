@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web.Http;
 using FxSaude.Core.Domain.Patterns;
 using FxSaude.Produto.Domain.Entities;
 using FxSaude.Produto.Domain.Patterns;
@@ -101,9 +102,20 @@ namespace FxSaude.Produto.Service.Test.UnitTests.Controllers
         }
 
         [Test]
-        [Ignore("Update  (PUT)    /api/users/:id")]
         public void ShouldUpdateUser()
         {
+            _users.Add(new User { Id = 1, Nickname = "Mili", Name = "Milena", Email = "milena@chiquititas.com.br" });
+            _users.Add(new User { Id = 2, Nickname = "Pata", Name = "Patrícia", Email = "patricia@chiquititas.com.br" });
+            _users.Add(new User { Id = 3, Nickname = "Bia", Name = "Beatriz", Email = "beatriz@chiquititas.com.br" });
+
+            _usersController.Put(2, new UserUpdateViewModel{ Nickname = "NewNick", Name = "New Name", Email = "new@user.com.br"});
+            var actual = _users.FirstOrDefault(u => u.Id == 2);
+
+            Assert.That(_users.Count, Is.EqualTo(3));
+            Assert.That(actual, Is.Not.Null);
+            Assert.That(actual.Nickname, Is.EqualTo("NewNick"));
+            Assert.That(actual.Name, Is.EqualTo("New Name"));
+            Assert.That(actual.Email, Is.EqualTo("new@user.com.br"));
         }
 
         [Test]
@@ -113,4 +125,5 @@ namespace FxSaude.Produto.Service.Test.UnitTests.Controllers
         }
         
     }
+
 }

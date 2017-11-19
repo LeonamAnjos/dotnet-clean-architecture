@@ -54,8 +54,16 @@ namespace FxSaude.Produto.Service.Controllers
         }
 
         // PUT: api/User/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]UserUpdateViewModel value)
         {
+            var repository = _productUnitOfWork.GetRepository<User>();
+            var user = repository.Queryable().FirstOrDefault(u => u.Id == id);
+            if (user == null) return;
+
+            user.Nickname = value.Nickname;
+            user.Name = value.Name;
+            user.Email = value.Email;
+            _productUnitOfWork.SaveChanges();
         }
 
         // DELETE: api/User/5
