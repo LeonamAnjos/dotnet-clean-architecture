@@ -34,7 +34,7 @@ namespace FxSaude.Produto.Service.Controllers
             var repository = _productUnitOfWork.GetRepository<User>();
             var user = repository.Queryable().FirstOrDefault(u => u.Id == id);
             if (user == null)
-                return null;
+                throw new KeyNotFoundException();
         
             return new UserViewModel
             {
@@ -58,7 +58,8 @@ namespace FxSaude.Produto.Service.Controllers
         {
             var repository = _productUnitOfWork.GetRepository<User>();
             var user = repository.Queryable().FirstOrDefault(u => u.Id == id);
-            if (user == null) return;
+            if (user == null)
+                throw new KeyNotFoundException();
 
             user.Nickname = value.Nickname;
             user.Name = value.Name;

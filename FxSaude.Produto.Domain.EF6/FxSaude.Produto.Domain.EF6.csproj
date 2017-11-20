@@ -68,6 +68,10 @@
     <Compile Include="Migrations\201711070847209_CreateMicroposts.Designer.cs">
       <DependentUpon>201711070847209_CreateMicroposts.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711201132376_AddUserNicknameColumn.cs" />
+    <Compile Include="Migrations\201711201132376_AddUserNicknameColumn.Designer.cs">
+      <DependentUpon>201711201132376_AddUserNicknameColumn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\Seeds\UserSeed.cs" />
     <Compile Include="Patterns\Repository.cs" />
@@ -97,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711070847209_CreateMicroposts.resx">
       <DependentUpon>201711070847209_CreateMicroposts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711201132376_AddUserNicknameColumn.resx">
+      <DependentUpon>201711201132376_AddUserNicknameColumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

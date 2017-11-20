@@ -93,12 +93,10 @@ namespace FxSaude.Produto.Service.Test.UnitTests.Controllers
         }
 
         [Test]
-        public void ShouldReturnEmptyUser()
+        public void ShouldNotFindUser()
         {
             _users.Add(new User { Id = 1, Nickname = "Mili", Name = "Milena", Email = "milena@chiquititas.com.br" });
-
-            var actual = _usersController.Get(2);
-            Assert.That(actual, Is.Null);
+            Assert.That(() => _usersController.Get(2), Throws.Exception.TypeOf<KeyNotFoundException>());
         }
 
         [Test]
@@ -116,6 +114,15 @@ namespace FxSaude.Produto.Service.Test.UnitTests.Controllers
             Assert.That(actual.Nickname, Is.EqualTo("NewNick"));
             Assert.That(actual.Name, Is.EqualTo("New Name"));
             Assert.That(actual.Email, Is.EqualTo("new@user.com.br"));
+        }
+
+        [Test]
+        public void ShouldNotFindUserToUpdate()
+        {
+            _users.Add(new User { Id = 1, Nickname = "Mili", Name = "Milena", Email = "milena@chiquititas.com.br" });
+
+            Assert.That(() => _usersController.Put(2, new UserUpdateViewModel { Nickname = "NewNick", Name = "New Name", Email = "new@user.com.br" }),
+                Throws.Exception.TypeOf<KeyNotFoundException>());
         }
 
         [Test]

@@ -9,8 +9,8 @@ namespace FxSaude.Produto.Domain.EF6.Migrations.Seeds
         public static void Execute(ProductDataContext context)
         {
             context.Users.AddOrUpdate(u => u.Id, 
-                new User{ Id = 1, Name = "Adm", Email = "adm@gmail.com"}, 
-                new User{ Id = 2, Name = "Leonam", Email = "leonam.ricardo@gmail.com"});
+                new User{ Id = 1, Nickname = "Adm", Name = "Administrator", Email = "adm@gmail.com"}, 
+                new User{ Id = 2, Nickname = "Leonam", Name = "Leonam Anjos", Email = "leonam.ricardo@gmail.com"});
         }
     }
 }
