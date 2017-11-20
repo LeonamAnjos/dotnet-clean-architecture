@@ -26,6 +26,7 @@ namespace FxSaude.Produto.Service.Test.UnitTests.Controllers
             var repository = new Mock<IRepository<User>>();
             repository.Setup(r => r.Insert(It.IsAny<User>())).Callback((User u) => _users.Add(u));
             repository.Setup(r => r.Queryable()).Returns(_users.AsQueryable);
+            repository.Setup(r => r.Delete(It.IsAny<int>())).Callback((object id) => _users.RemoveAt(_users.FindIndex(u => u.Id == (int)id)));
 
             var unitOfWork = new Mock<IProductUnitOfWork>();
             unitOfWork.Setup(u => u.GetRepository<User>()).Returns(repository.Object);
@@ -36,11 +37,21 @@ namespace FxSaude.Produto.Service.Test.UnitTests.Controllers
         [Test]
         public void ShouldCreateUser()
         {
-            _usersController.Post(new UserCreateViewModel{ Name = "Donald Trump", Email = "trump@whitehouse.gov" });
+            _usersController.Post(new UserCreateViewModel{ Nickname = "Trump", Name = "Donald Trump", Email = "trump@whitehouse.gov" });
 
             Assert.AreEqual(_users.Count, 1);
+            Assert.AreEqual(_users[0].Nickname, "Trump");
             Assert.AreEqual(_users[0].Name, "Donald Trump");
             Assert.AreEqual(_users[0].Email, "trump@whitehouse.gov");
+        }
+
+        [Test]
+        public void ShouldNotCreateUserWithNullArgument()
+        {
+            Assert.That(() => _usersController.Post(null), 
+                Throws.Exception
+                .TypeOf<ArgumentNullException>()
+                .With.Property("ParamName").EqualTo("viewModel"));
         }
 
         [Test]
@@ -59,9 +70,7 @@ namespace FxSaude.Produto.Service.Test.UnitTests.Controllers
         [Test]
         public void ShouldReturnAllUsers()
         {
-            _users.Add(new User { Id = 1, Nickname = "DI", Name = "Didi", Email = "didi@trapalhoes.com.br"});
-            _users.Add(new User { Id = 2, Nickname = "DE", Name = "Dede", Email = "dede@trapalhoes.com.br"});
-            _users.Add(new User { Id = 3, Nickname = "MU", Name = "Mussum", Email = "mussum@trapalhoes.com.br"});
+            PopulateUsers();
 
             var expected = _users.Select(u => new UserViewModel { Name = u.Name, Nickname = u.Nickname, Email = u.Email }).ToList();
             var actual = _usersController.Get().ToList();
@@ -81,9 +90,7 @@ namespace FxSaude.Produto.Service.Test.UnitTests.Controllers
         [Test]
         public void ShouldReturnUserWithSameId()
         {
-            _users.Add(new User { Id = 1, Nickname = "Mili", Name = "Milena", Email = "milena@chiquititas.com.br" });
-            _users.Add(new User { Id = 2, Nickname = "Pata", Name = "Patrícia", Email = "patricia@chiquititas.com.br" });
-            _users.Add(new User { Id = 3, Nickname = "Bia", Name = "Beatriz", Email = "beatriz@chiquititas.com.br" });
+            PopulateUsers();
 
             var actual = _usersController.Get(2);
             Assert.That(actual, Is.Not.Null);
@@ -102,9 +109,7 @@ namespace FxSaude.Produto.Service.Test.UnitTests.Controllers
         [Test]
         public void ShouldUpdateUser()
         {
-            _users.Add(new User { Id = 1, Nickname = "Mili", Name = "Milena", Email = "milena@chiquititas.com.br" });
-            _users.Add(new User { Id = 2, Nickname = "Pata", Name = "Patrícia", Email = "patricia@chiquititas.com.br" });
-            _users.Add(new User { Id = 3, Nickname = "Bia", Name = "Beatriz", Email = "beatriz@chiquititas.com.br" });
+            PopulateUsers();
 
             _usersController.Put(2, new UserUpdateViewModel{ Nickname = "NewNick", Name = "New Name", Email = "new@user.com.br"});
             var actual = _users.FirstOrDefault(u => u.Id == 2);
@@ -126,11 +131,27 @@ namespace FxSaude.Produto.Service.Test.UnitTests.Controllers
         }
 
         [Test]
-        [Ignore("Destroy (DELETE) /api/users/:id")]
         public void ShouldDeleteUserWithSameId()
         {
+            PopulateUsers();
+
+            Assert.That(_users.Find(u => u.Id == 2), Is.Not.Null);
+            _usersController.Delete(2);
+            Assert.That(_users.Find(u => u.Id == 2), Is.Null);
         }
-        
+
+        [Test]
+        public void ShouldNotFindUserToDelete()
+        {
+            Assert.That(() =>_usersController.Delete(4), Throws.Exception.TypeOf<KeyNotFoundException>());
+        }
+
+        private void PopulateUsers()
+        {
+            _users.Add(new User {Id = 1, Nickname = "Mili", Name = "Milena", Email = "milena@chiquititas.com.br"});
+            _users.Add(new User {Id = 2, Nickname = "Pata", Name = "Patrícia", Email = "patricia@chiquititas.com.br"});
+            _users.Add(new User {Id = 3, Nickname = "Bia", Name = "Beatriz", Email = "beatriz@chiquititas.com.br"});
+        }
     }
 
 }

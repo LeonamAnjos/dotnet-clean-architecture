@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using FxSaude.Produto.Domain.Entities;
@@ -45,9 +46,12 @@ namespace FxSaude.Produto.Service.Controllers
         }
 
         // POST: api/User
-        public void Post([FromBody]UserCreateViewModel value)
+        public void Post([FromBody]UserCreateViewModel viewModel)
         {
-            var user = new User {Name = value.Name, Email = value.Email};
+            if(viewModel == null)
+                throw new ArgumentNullException(nameof(viewModel)); 
+
+            var user = new User {Nickname = viewModel.Nickname, Name = viewModel.Name, Email = viewModel.Email};
             var repository = _productUnitOfWork.GetRepository<User>();
             repository.Insert(user);
             _productUnitOfWork.SaveChanges();
@@ -70,6 +74,11 @@ namespace FxSaude.Produto.Service.Controllers
         // DELETE: api/User/5
         public void Delete(int id)
         {
+            var repository = _productUnitOfWork.GetRepository<User>();
+            if(!repository.Queryable().Any(u => u.Id == id))
+                throw new KeyNotFoundException();
+
+            repository.Delete(id);
         }
     }
 }
