@@ -23,6 +23,7 @@ namespace FxSaude.Produto.Service.Controllers
             var repository = _productUnitOfWork.GetRepository<User>();
             return repository.Queryable().Select(u => new UserViewModel
             {
+                Id = u.Id,
                 Nickname = u.Nickname,
                 Name = u.Name,
                 Email = u.Email
@@ -39,6 +40,7 @@ namespace FxSaude.Produto.Service.Controllers
         
             return new UserViewModel
             {
+                Id = user.Id,
                 Nickname = user.Nickname,
                 Name = user.Name,
                 Email = user.Email,
@@ -79,6 +81,7 @@ namespace FxSaude.Produto.Service.Controllers
                 throw new KeyNotFoundException();
 
             repository.Delete(id);
+            _productUnitOfWork.SaveChanges();
         }
     }
 }
