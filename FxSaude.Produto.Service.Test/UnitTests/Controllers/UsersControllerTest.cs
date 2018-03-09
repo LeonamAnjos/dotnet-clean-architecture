@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web.Http;
 using FxSaude.Core.Domain.Patterns;
@@ -148,10 +149,11 @@ namespace FxSaude.Produto.Service.Test.UnitTests.Controllers
 
         private void PopulateUsers()
         {
-            _users.Add(new User {Id = 1, Nickname = "Mili", Name = "Milena", Email = "milena@chiquititas.com.br"});
-            _users.Add(new User {Id = 2, Nickname = "Pata", Name = "Patrícia", Email = "patricia@chiquititas.com.br"});
-            _users.Add(new User {Id = 3, Nickname = "Bia", Name = "Beatriz", Email = "beatriz@chiquititas.com.br"});
+            _users.Add(new User { Id = 1, Nickname = "Mili", Name = "Milena", Email = "milena@chiquititas.com.br" });
+            _users.Add(new User { Id = 2, Nickname = "Pata", Name = "Patrícia", Email = "patricia@chiquititas.com.br" });
+            _users.Add(new User { Id = 3, Nickname = "Bia", Name = "Beatriz", Email = "beatriz@chiquititas.com.br" });
         }
+
     }
 
 }

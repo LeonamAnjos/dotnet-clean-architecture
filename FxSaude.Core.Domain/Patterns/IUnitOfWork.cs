@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Data.Common;
 
 namespace FxSaude.Core.Domain.Patterns
 {
@@ -8,7 +9,7 @@ namespace FxSaude.Core.Domain.Patterns
         int SaveChanges();
         void Dispose(bool disposing);
         IRepository<TEntity> GetRepository<TEntity>() where TEntity : Entity;
-        void BeginTransaction(IsolationLevel isolationLevel = IsolationLevel.Unspecified);
+        DbTransaction BeginTransaction(IsolationLevel isolationLevel = IsolationLevel.Unspecified);
         bool Commit();
         void Rollback();
     }

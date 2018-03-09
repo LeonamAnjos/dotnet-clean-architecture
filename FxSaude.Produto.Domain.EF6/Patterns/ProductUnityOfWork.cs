@@ -30,6 +30,7 @@ namespace FxSaude.Produto.Domain.EF6.Patterns
             _repositories = new Dictionary<string, dynamic>();
         }
 
+        #region Repositories
         public IRepository<TEntity> GetRepository<TEntity>() where TEntity : Entity
         {
             if (ServiceLocator.IsLocationProviderSet)
@@ -53,10 +54,11 @@ namespace FxSaude.Produto.Domain.EF6.Patterns
         {
             return typeof(TEntity).Name;
         }
+        #endregion
 
         #region Transaction operations
 
-        public void BeginTransaction(IsolationLevel isolationLevel = IsolationLevel.Unspecified)
+        public DbTransaction BeginTransaction(IsolationLevel isolationLevel = IsolationLevel.Unspecified)
         {
             _objectContext = ((IObjectContextAdapter)_dbContext).ObjectContext;
             if (_objectContext.Connection.State != ConnectionState.Open)
@@ -64,7 +66,7 @@ namespace FxSaude.Produto.Domain.EF6.Patterns
                 _objectContext.Connection.Open();
             }
 
-            _transaction = _objectContext.Connection.BeginTransaction(isolationLevel);
+            return _transaction = _objectContext.Connection.BeginTransaction(isolationLevel);
         }
 
         public int SaveChanges()
