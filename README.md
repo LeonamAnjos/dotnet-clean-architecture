@@ -1,5 +1,5 @@
 # dotnet-clean-architecture
-An example to implement clean architecture with .net c#
+An example of implementing clean architecture with .net c# WebApi
 
 ### Migration
 
